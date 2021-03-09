@@ -1,5 +1,13 @@
 # @backstage/integration
 
+## 0.5.1
+
+### Patch Changes
+
+- 277644e09: Include missing fields in GitLab config schema. This sometimes prevented loading config on the frontend specifically, when using self-hosted GitLab.
+- 905cbfc96: Add `resolveEditUrl` to integrations to resolve a URL that can be used to edit
+  a file in the web interfaces of an SCM.
+
 ## 0.5.0
 
 ### Minor Changes

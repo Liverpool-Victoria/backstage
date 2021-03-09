@@ -1,5 +1,14 @@
 # @backstage/core
 
+## 0.7.1
+
+### Patch Changes
+
+- 2089de76b: Deprecated `ItemCard`. Added `ItemCardGrid` and `ItemCardHeader` instead, that can be used to compose functionality around regular Material-UI `Card` components instead.
+- dc1fc92c8: Add support for non external URI's in the Link component to `to` prop. For example `<Link to="slack://channel?team=T0000&id=C0000">Slack</Link>
+- Updated dependencies [2089de76b]
+  - @backstage/theme@0.2.4
+
 ## 0.7.0
 
 ### Minor Changes

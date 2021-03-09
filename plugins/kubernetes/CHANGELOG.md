@@ -1,5 +1,65 @@
 # @backstage/plugin-kubernetes
 
+## 0.4.0
+
+### Minor Changes
+
+- 9581ff0b4: Restructure configuration; Add GKE cluster locator
+
+  Config migration
+
+  1. `kubernetes.clusters` is now at `kubernetes.clusterLocatorMethods[].clusters` when the `clusterLocatorMethod` is of `type: 'config''`
+  2. `kubernetes.serviceLocatorMethod` is now an object. `multiTenant` is the only valid `type` currently
+
+  Old config example:
+
+  ```yaml
+  kubernetes:
+    serviceLocatorMethod: 'multiTenant'
+    clusterLocatorMethods:
+      - 'config'
+    clusters:
+      - url: http://127.0.0.1:9999
+        name: minikube
+        authProvider: 'serviceAccount'
+        serviceAccountToken:
+          $env: K8S_MINIKUBE_TOKEN
+      - url: http://127.0.0.2:9999
+        name: aws-cluster-1
+        authProvider: 'aws'
+  ```
+
+  New config example:
+
+  ```yaml
+  kubernetes:
+    serviceLocatorMethod:
+      type: 'multiTenant'
+    clusterLocatorMethods:
+      - type: 'config'
+        clusters:
+          - url: http://127.0.0.1:9999
+            name: minikube
+            authProvider: 'serviceAccount'
+            serviceAccountToken:
+              $env: K8S_MINIKUBE_TOKEN
+          - url: http://127.0.0.2:9999
+            name: aws-cluster-1
+            authProvider: 'aws'
+  ```
+
+### Patch Changes
+
+- 763926bc1: Adds a new method `getClusters` to grab cluster configuration in the frontend
+- Updated dependencies [0b42fff22]
+- Updated dependencies [9581ff0b4]
+- Updated dependencies [2089de76b]
+- Updated dependencies [dc1fc92c8]
+  - @backstage/catalog-model@0.7.4
+  - @backstage/plugin-kubernetes-backend@0.3.0
+  - @backstage/core@0.7.1
+  - @backstage/theme@0.2.4
+
 ## 0.3.12
 
 ### Patch Changes

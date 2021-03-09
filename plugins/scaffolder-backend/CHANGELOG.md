@@ -1,5 +1,24 @@
 # @backstage/plugin-scaffolder-backend
 
+## 0.9.1
+
+### Patch Changes
+
+- d7245b733: Remove runDockerContainer, and start using the utility function provided by @backstage/backend-common
+- 0b42fff22: Make use of parseLocationReference/stringifyLocationReference
+- c532c1682: Fixes task failures caused by undefined step input
+- 761698831: Bump to the latest version of the Knex library.
+- Updated dependencies [277644e09]
+- Updated dependencies [d7245b733]
+- Updated dependencies [0b42fff22]
+- Updated dependencies [0b42fff22]
+- Updated dependencies [905cbfc96]
+- Updated dependencies [761698831]
+  - @backstage/integration@0.5.1
+  - @backstage/backend-common@0.5.6
+  - @backstage/catalog-model@0.7.4
+  - @backstage/catalog-client@0.3.7
+
 ## 0.9.0
 
 ### Minor Changes
